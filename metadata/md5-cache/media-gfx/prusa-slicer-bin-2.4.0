@@ -1,0 +1,11 @@
+DEFINED_PHASES=install unpack
+DESCRIPTION=PrusaSlicer takes 3D models (STL, OBJ, AMF) and converts them into G-code.
+EAPI=7
+HOMEPAGE=https://github.com/prusa3d/PrusaSlicer
+INHERIT=desktop eutils
+KEYWORDS=~amd64
+LICENSE=AGPL-3 CC-BY-3.0
+SLOT=0
+SRC_URI=https://github.com/prusa3d/PrusaSlicer/releases/download/version_2.4.0/PrusaSlicer-2.4.0+linux-x64-202112211614.tar.bz2 -> prusa-slicer-bin-2.4.0.tar.bz2
+_eclasses_=desktop	c0d27bf73aa08ca05b663dbd31fbef28	edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4251d4c84c25f59094fd557e0063a974	eutils	dab5d8ec471d025b79c9e6906bcf3bff
+_md5_=6bbda6ffe7bb3307305f01b982c58231
