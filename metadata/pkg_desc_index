@@ -1,4 +1,4 @@
-dev-dotnet/rider 2022.2.4 2022.3 2022.3.1 2022.3.2 2022.3.3: A cross-platform .NET IDE based on the IntelliJ platform and ReSharper.
+dev-dotnet/rider 2022.3.3 2023.1: A cross-platform .NET IDE based on the IntelliJ platform and ReSharper.
 dev-python/PyPDF3 1.0.6: Python library to work with PDF files
 media-gfx/prusa-slicer-bin 2.5.0: PrusaSlicer takes 3D models (STL, OBJ, AMF) and converts them into G-code.
 net-im/pidgin-chime 1.3: Pidgen plugin for Amazon Chime
