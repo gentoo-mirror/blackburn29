@@ -1,6 +1,6 @@
-dev-dotnet/rider 2023.3.1 2023.3.2: A cross-platform .NET IDE based on the IntelliJ platform and ReSharper.
+dev-dotnet/rider 2023.3.2 2023.3.3: A cross-platform .NET IDE based on the IntelliJ platform and ReSharper.
 dev-python/PyPDF3 1.0.6: Python library to work with PDF files
-dev-util/datagrip 2023.3.1 2023.3.2: A cross-platform IDE for Databases and SQL by JetBrains
+dev-util/datagrip 2023.3.2 2023.3.3: A cross-platform IDE for Databases and SQL by JetBrains
 dev-util/idea-ultimate 2023.3.1 2023.3.2: A cross-platform IDE for Enterprise, Web and Mobile development
 dev-util/rustrover 233.11799.306: A cross-platform IDE for Rust developers
 dev-util/webstorm 2023.3.2: An integrated development environment for JavaScript and related technologies.
