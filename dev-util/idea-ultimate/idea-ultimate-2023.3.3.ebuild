@@ -20,7 +20,7 @@ IUSE=""
 QA_PREBUILT="opt/${P}/*"
 RDEPEND="
 	dev-libs/libdbusmenu
-	dev-util/lldb
+	dev-debug/lldb
 	media-libs/mesa[X(+)]
 	x11-libs/libX11
 	x11-libs/libXcomposite
@@ -40,6 +40,14 @@ SRC_URI="https://download.jetbrains.com/${SRC_URI_PATH}/${SRC_URI_PN}-${PV}.tar.
 
 BUILD_NUMBER="233.14015.106"
 S="${WORKDIR}/idea-IU-${BUILD_NUMBER}"
+
+src_prepare() {
+	default
+
+	local remove_me=( "./lib/async-profiler/aarch64" "./plugins/cwm-plugin/quiche-native/linux-aarch64" )
+
+	rm -rv "${remove_me[@]}" || die
+}
 
 src_install() {
 	local dir="/opt/${P}"
