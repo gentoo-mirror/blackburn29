@@ -10,5 +10,5 @@ RDEPEND=sys-fs/fuse:0 media-libs/mesa x11-libs/libXi x11-libs/libXrender x11-lib
 RESTRICT=bindist mirror splitdebug
 SLOT=0
 SRC_URI=https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.3.0.30876.tar.gz -> jetbrains-toolbox-2.3.0.tar.gz
-_eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	linux-info	7ca3057b277f1e5978947b4cc289ce62	desktop	021728fdc1b03b36357dbc89489e0f0d	wrapper	4a1902f969e5718126434fc35f3a0d9c
+_eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	linux-info	e967b81f54be6f49f4219a57ce7db437	desktop	021728fdc1b03b36357dbc89489e0f0d	wrapper	4a1902f969e5718126434fc35f3a0d9c
 _md5_=2371ec6ab4b4e37f9079e4c01d28d25f
