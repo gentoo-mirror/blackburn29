@@ -33,6 +33,14 @@ src_prepare() {
 	local remove_me=( "${RESHARPER_DIR}"/windows* "${RESHARPER_DIR}"/linux*-arm* "${RESHARPER_DIR}"/macos* )
 
 	rm -rv "${remove_me[@]}" || die
+
+	if use wayland; then
+		echo "-Dawt.toolkit.name=WLToolkit" >> bin/rider64.vmoptions
+
+		elog "Experimental wayland support has been enabled via USE flags"
+		elog "You may need to update your JBR runtime to the latest version"
+		elog "https://github.com/JetBrains/JetBrainsRuntime/releases"
+	fi
 }
 
 src_install() {
