@@ -58,14 +58,6 @@ src_install() {
 	fperms 755 "${dir}"/jbr/bin/{java,javac,javadoc,jcmd,jdb,jfr,jhsdb,jinfo,jmap,jps,jrunscript,jstack,jstat,keytool,rmiregistry,serialver}
 	fperms 755 "${dir}"/jbr/lib/{chrome-sandbox,jcef_helper,jexec,jspawnhelper}
 
-	if use wayland; then
-		echo "-Dawt.toolkit.name=WLToolkit" >> "${dir}"/bin/rider64.vmoptions
-
-		elog "Experimental wayland support has been enabled via USE flags"
-		elog "You may need to update your JBR runtime to the latest version"
-		elog "https://github.com/JetBrains/JetBrainsRuntime/releases"
-	fi
-
 	make_wrapper "${PN}" "${dir}/bin/${PN}.sh"
 	newicon "bin/${PN}.svg" "${PN}.svg"
 	make_desktop_entry "${PN}" "Rider ${VER}" "${PN}" "Development;IDE;"
