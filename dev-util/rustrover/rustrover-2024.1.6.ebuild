@@ -21,6 +21,7 @@ IUSE="wayland"
 QA_PREBUILT="opt/${P}/*"
 RDEPEND="
 	dev-libs/libdbusmenu
+	dev-libs/glib
 	dev-debug/lldb
 	media-libs/mesa[X(+)]
 	x11-libs/libX11
