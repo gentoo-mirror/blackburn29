@@ -1,9 +1,9 @@
 dev-dotnet/rider 2024.1.4 2024.1.5: A cross-platform .NET IDE based on the IntelliJ platform and ReSharper.
 dev-python/PyPDF3 1.0.6: Python library to work with PDF files
 dev-util/datagrip 2024.1.3 2024.1.4: A cross-platform IDE for Databases and SQL by JetBrains
-dev-util/idea-ultimate 2024.1.4 2024.1.5: A cross-platform IDE for Enterprise, Web and Mobile development
+dev-util/idea-ultimate 2024.1.5 2024.2: A cross-platform IDE for Enterprise, Web and Mobile development
 dev-util/jetbrains-toolbox 2.3.0: Save time and effort maintaining your IDEs, by downloading a patch or a set of patches instead of the full package download. Everything updates in the background while you never stop coding.
-dev-util/rustrover 2024.1.5 2024.1.6: A cross-platform IDE for Rust developers
+dev-util/rustrover 2024.1.6 2024.1.7: A cross-platform IDE for Rust developers
 dev-util/webstorm 2024.1.4 2024.1.5: An integrated development environment for JavaScript and related technologies.
 media-gfx/prusa-slicer-bin 2.7.0: PrusaSlicer takes 3D models (STL, OBJ, AMF) and converts them into G-code.
 net-im/pidgin-chime 1.5: Pidgen plugin for Amazon Chime
