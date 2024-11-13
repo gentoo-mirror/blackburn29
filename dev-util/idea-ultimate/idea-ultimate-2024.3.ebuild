@@ -6,23 +6,24 @@ EAPI=8
 
 inherit desktop wrapper
 
-DESCRIPTION="A cross-platform .NET IDE based on the IntelliJ platform and ReSharper."
-HOMEPAGE="https://www.jetbrains.com/rider/"
-SRC_URI="https://download-cf.jetbrains.com/rider/JetBrains.Rider-${PV}.tar.gz"
+DESCRIPTION="A cross-platform IDE for Enterprise, Web and Mobile development"
+HOMEPAGE="https://www.jetbrains.com/idea/"
 
-LICENSE="|| ( JetBrains-business JetBrains-educational JetBrains-classroom JetBrains-individual )"
+LICENSE="|| ( IDEA IDEA_Academic IDEA_Classroom IDEA_OpenSource IDEA_Personal )"
 LICENSE+=" 0BSD Apache-2.0 BSD BSD-2 CC0-1.0 CC-BY-2.5 CC-BY-3.0 CC-BY-4.0 CDDL-1.1 CPL-1.0 EPL-1.0 GPL-2"
 LICENSE+=" GPL-2-with-classpath-exception ISC JSON LGPL-2.1 LGPL-3 LGPL-3+ libpng MIT MPL-1.1 MPL-2.0"
-LICENSE+="Ms-PL Ms-RL OFL-1.1 public-domain unicode Unlicense W3C ZLIB ZPL"
+LICENSE+=" OFL-1.1 public-domain unicode Unlicense W3C ZLIB ZPL"
 
 SLOT="0"
 KEYWORDS="~amd64"
+RESTRICT="bindist mirror splitdebug"
 IUSE="wayland"
+QA_PREBUILT="opt/${P}/*"
 RDEPEND="
 	dev-libs/libdbusmenu
 	dev-debug/lldb
-	media-libs/mesa[X(+)]
 	sys-process/audit
+	media-libs/mesa[X(+)]
 	x11-libs/libX11
 	x11-libs/libXcomposite
 	x11-libs/libXcursor
@@ -33,12 +34,18 @@ RDEPEND="
 	x11-libs/libXrandr
 "
 
-S="${WORKDIR}/JetBrains Rider-${PV}"
+FRIENDLY_NAME="IDEA Ultimate"
+MY_PN="idea"
+SRC_URI_PATH="idea"
+SRC_URI_PN="ideaIU"
+SRC_URI="https://download.jetbrains.com/${SRC_URI_PATH}/${SRC_URI_PN}-${PV}.tar.gz -> ${P}.tar.gz"
 
-QA_PREBUILT="opt/${P}/*"
-
-RESHARPER_DIR="lib/ReSharperHost"
-PLUGIN_DIR="plugins"
+src_unpack() {
+	cp "${DISTDIR}"/${P}.tar.gz "${WORKDIR}" || die
+	mkdir -p "${P}"
+	tar xf "${P}".tar.gz --strip-components=1 -C ./"${P}"
+	rm -rf "${P}".tar.gz
+}
 
 src_prepare() {
 	default
@@ -72,24 +79,16 @@ src_install() {
 
 	insinto "${dir}"
 	doins -r *
-
-	fperms 755 "${dir}"/bin/{"${PN}",repair,fsnotifier}
-	fperms 755 "${dir}"/bin/{remote-dev-server,inspect,rider,format,ltedit,jetbrains_client}.sh
-
-	fperms 755 "${dir}"/"${RESHARPER_DIR}"/linux-x64/{Rider.Backend,JetBrains.Debugger.Worker,JetBrains.ProcessEnumerator.Worker,clang-format,jb_zip_unarchiver}
-	fperms 755 "${dir}"/"${RESHARPER_DIR}"/linux-x64/dotnet/dotnet
-
-	fperms 755 "${dir}"/"${PLUGIN_DIR}"/cidr-debugger-plugin/bin/lldb/linux/x64/bin/{lldb,lldb-server,lldb-argdumper,LLDBFrontend}
-	fperms 755 "${dir}"/"${PLUGIN_DIR}"/dotCommon/DotFiles/linux-x64/JetBrains.Profiler.PdbServer
-	fperms 755 "${dir}"/"${PLUGIN_DIR}"/remote-dev-server/selfcontained/bin/{xkbcomp,Xvfb}
-	fperms 755 "${dir}"/"${PLUGIN_DIR}"/gateway-plugin/lib/remote-dev-workers/remote-dev-worker-linux-amd64
+	fperms 755 "${dir}"/bin/"${MY_PN}"
+	fperms 755 "${dir}"/bin/{"${MY_PN}",format,inspect,ltedit,remote-dev-server}.sh
+	fperms 755 "${dir}"/bin/{fsnotifier,remote-dev-server,restarter}
 
 	fperms 755 "${dir}"/jbr/bin/{java,javac,javadoc,jcmd,jdb,jfr,jhsdb,jinfo,jmap,jps,jrunscript,jstack,jstat,keytool,rmiregistry,serialver}
 	fperms 755 "${dir}"/jbr/lib/{chrome-sandbox,cef_server,jcef_helper,jexec,jspawnhelper}
 
-	make_wrapper "${PN}" "${dir}/bin/${PN}"
-	newicon "bin/${PN}.svg" "${PN}.svg"
-	make_desktop_entry "${PN}" "Rider ${VER}" "${PN}" "Development;IDE;"
+	make_wrapper "${PN}" "${dir}"/bin/"${MY_PN}"
+	newicon bin/"${MY_PN}".svg "${PN}".svg
+	make_desktop_entry "${PN}" "${FRIENDLY_NAME} ${PVR}" "${PN}" "Development;IDE;"
 
 	# recommended by: https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit
 	dodir /usr/lib/sysctl.d/
