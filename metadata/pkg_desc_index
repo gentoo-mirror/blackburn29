@@ -3,7 +3,7 @@ dev-util/clion 2024.3.2: A cross-platform IDE for C and C++
 dev-util/datagrip 2024.3.4: A cross-platform IDE for Databases and SQL by JetBrains
 dev-util/idea-ultimate 2024.3.2.2: A cross-platform IDE for Enterprise, Web and Mobile development
 dev-util/jetbrains-toolbox 2.4.2.32922: Save time and effort maintaining your IDEs, by downloading a patch or a set of patches instead of the full package download. Everything updates in the background while you never stop coding.
-dev-util/rider 2024.3.4: A cross-platform .NET IDE based on the IntelliJ platform and ReSharper.
+dev-util/rider 2024.3.5: A cross-platform .NET IDE based on the IntelliJ platform and ReSharper.
 dev-util/rustrover 2024.3.4: A cross-platform IDE for Rust developers
 dev-util/webstorm 2024.3.2.1: An integrated development environment for JavaScript and related technologies.
 media-gfx/prusa-slicer-bin 2.7.0: PrusaSlicer takes 3D models (STL, OBJ, AMF) and converts them into G-code.
